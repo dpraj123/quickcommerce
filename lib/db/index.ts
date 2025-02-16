@@ -1,4 +1,7 @@
 import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
-export const connection = postgres(process.env.DATABASE_URL as string);
+
+const queryString = process.env.NEXT_PUBLIC_DATABASE_URL as string;
+export const connection = postgres(queryString);
+
 export const db = drizzle(connection);
