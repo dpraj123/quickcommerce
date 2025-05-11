@@ -15,7 +15,6 @@ export async function POST(request: Request) {
   }
 
   try {
-    console.log("validated data", validatedData);
     await db.insert(inventories).values(validatedData);
 
     return Response.json({ message: "OK" }, { status: 201 });
